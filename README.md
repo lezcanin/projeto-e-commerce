@@ -1,3 +1,4 @@
+*ENTREGA PROJETO 1: E-COMMERCE*
 Projeto Conceitual de Gestão de Pedidos e Estoques
 
 Descrição do Projeto
@@ -107,3 +108,107 @@ Conclusão
 Este projeto conceitual fornece um modelo robusto para gerenciamento de pedidos e estoques, cobrindo desde o cadastro de clientes e fornecedores até a distribuição dos produtos. O esquema apresentado possibilita a organização eficiente dos processos comerciais e logísticos, garantindo controle sobre cada etapa do fluxo de vendas.
 
 
+
+*ENTREGA PROJETO OFICINA*
+
+Projeto Conceitual de Gestão de Oficinas Mecânicas
+
+Descrição do Projeto
+
+Este projeto visa modelar e gerenciar um sistema de controle de ordens de serviço (OS), clientes, mecânicos e execução de serviços em uma oficina mecânica. A estrutura do banco de dados permite a organização eficiente dos processos de manutenção de veículos, garantindo um fluxo de trabalho claro e estruturado para os serviços prestados.
+
+Estrutura do Banco de Dados
+
+O banco de dados é organizado para otimizar a gestão das atividades de uma oficina mecânica, desde o cadastro de clientes e mecânicos até a emissão de ordens de serviço e controle da execução de serviços.
+
+Tabelas Principais
+
+Serviço: Registra informações sobre os serviços prestados.
+
+idserviço (INT) - Identificador único do serviço.
+
+mecanico_idmecanico (INT) - Referência ao mecânico responsável pelo serviço.
+
+valor (VARCHAR) - Custo do serviço.
+
+Ordem de Serviço (OS): Controla as ordens de serviço emitidas.
+
+idOS (INT) - Identificador único da OS.
+
+numero (VARCHAR) - Número da OS.
+
+data de emissão (VARCHAR) - Data em que a OS foi emitida.
+
+valor (VARCHAR) - Valor total da OS.
+
+OScol (VARCHAR) - Informações complementares sobre a OS.
+
+clientes_idclientes (INT) - Cliente relacionado à OS.
+
+mecanico_idmecanico (INT) - Mecânico responsável.
+
+mão de obra_idmão de obra (INT) - Custo da mão de obra.
+
+Mecânico: Cadastro de mecânicos da oficina.
+
+idmecanico (INT) - Identificador único do mecânico.
+
+nome (VARCHAR) - Nome do mecânico.
+
+endereço (VARCHAR) - Endereço do mecânico.
+
+especialidade (VARCHAR) - Área de especialização do mecânico.
+
+Cliente: Registra os clientes da oficina.
+
+idclientes (INT) - Identificador único do cliente.
+
+Peça: Gerencia peças utilizadas nos serviços.
+
+idpeça (INT) - Identificador único da peça.
+
+valor (VARCHAR) - Custo da peça.
+
+Veículos: Cadastro de veículos atendidos pela oficina.
+
+idveiculos (INT) - Identificador único do veículo.
+
+cliente_idclientes (INT) - Referência ao cliente proprietário do veículo.
+
+Execução: Registra os serviços executados em veículos.
+
+veiculos_idveiculos (INT) - Veículo no qual o serviço foi realizado.
+
+serviço_idserviço (INT) - Serviço executado.
+
+mecanico_idmecanico (INT) - Mecânico responsável pela execução.
+
+Mão de Obra: Relaciona peças e serviços à mão de obra utilizada.
+
+peça_idpeça (INT) - Peça utilizada no serviço.
+
+serviço_idserviço (INT) - Serviço onde a peça foi aplicada.
+
+mão de obra_idmão de obra (INT) - Custo da mão de obra associada ao serviço.
+
+Relacionamentos
+
+Execução de Serviço: Relaciona mecânicos, veículos e serviços prestados.
+
+veiculos_idveiculos → serviço_idserviço → mecanico_idmecanico
+
+Ordem de Serviço: Conecta clientes aos serviços realizados em seus veículos.
+
+clientes_idclientes → idOS
+
+mecanico_idmecanico → idOS
+
+Mão de Obra e Peças: Registra a relação entre os serviços realizados e as peças utilizadas.
+
+peça_idpeça → serviço_idserviço
+
+mão de obra_idmão de obra → serviço_idserviço
+
+Conclusão
+
+O modelo conceitual apresentado fornece uma estrutura eficiente para a gestão de oficinas mecânicas, permitindo um controle detalhado das ordens de serviço, mecânicos, peças e execuções de serviços. Esse sistema melhora a organização interna da oficina e facilita a administração das atividades operacionais.
